@@ -10,6 +10,13 @@
     "ssh_username": "ubuntu",
     "ami_name": "packer_ami {{timestamp | clean_ami_name}}"
    }
-  ]
+  ],
+
+  "provisioners": [
+   {
+     "type": "shell",
+     "inline": "sudo apt-get update"
+   }
+   ]
 
 }
