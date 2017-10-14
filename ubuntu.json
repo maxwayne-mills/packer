@@ -1,0 +1,15 @@
+{
+
+  "builders": [
+   {
+    "name": "ubuntu-xenial",
+    "type": "amazon-ebs",
+    "region": "ca-central-1",
+    "source_ami": "ami-e59c2581",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "packer_ami {{timestamp | clean_ami_name}}"
+   }
+  ]
+
+}
