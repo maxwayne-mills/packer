@@ -13,10 +13,29 @@
   ],
 
   "provisioners": [
+
    {
      "type": "shell",
-     "inline": "sudo apt-get update"
+     "execute_command": "{{.Vars}} sudo -E -S bash '{{.Path}}'",
+     "scripts": [
+	"scripts/initialize.sh",
+	"scripts/applications.sh"
+ 	]
    }
+
+   ],
+
+  "post-processors": [
+   {
+    "type": "vagrant",
+    "compression_level": 1,
+    "override": {
+      "vmware": {
+        "compression_level":0
+      }
+     }
+   }
+
    ]
 
 }
