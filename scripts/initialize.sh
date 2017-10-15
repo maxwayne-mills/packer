@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Upgrade system
-auso apt-get update
+sudo apt-get update
 sudo apt-get upgrade
 
 ## Install pip
