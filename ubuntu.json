@@ -10,29 +10,22 @@
     "ssh_username": "ubuntu",
     "ami_name": "packer_ami {{timestamp | clean_ami_name}}",
     "force_deregister": "True",
-    "force_delete_snapshot": "True" 
+    "force_delete_snapshot": "True", 
+    "tags": {
+      "Os_Version": "ubuntu",
+      "Release": "Latest"
+      }
    }
   ],
 
   "provisioners": [
-
    {
      "type": "shell",
      "execute_command": "{{.Vars}} sudo -E -S bash '{{.Path}}'",
      "scripts": [
-	"scripts/initialize.sh",
-	"scripts/applications.sh"
+	"scripts/initialize.sh"
  	]
    }
-
-   ],
-
-  "post-processors": [
-   {
-    "type": "vagrant",
-    "compression_level": 1
-   }
-
    ]
 
 }
