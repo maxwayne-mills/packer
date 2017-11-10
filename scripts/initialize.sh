@@ -10,5 +10,8 @@ sudo apt-get -y install python-pip
 ## Upgrade PIP
 pip install --upgrade pip 
 
+## Install ansible
+pip install ansible
+
 ## Add clarence as a user
 sudo useradd clarence -p gr33n3r!
