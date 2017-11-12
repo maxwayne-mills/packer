@@ -8,12 +8,12 @@
     "source_ami": "ami-e59c2581",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "packer_ami {{timestamp | clean_ami_name}}",
+    "ami_name": "oss-ami {{timestamp | clean_ami_name}}",
     "force_deregister": "True",
-    "force_delete_snapshot": "True", 
+    "force_delete_snapshot": "True",
     "tags": {
       "Os_Version": "ubuntu",
-      "Release": "Latest"
+      "Release": "Xenial Latest"
       }
    }
   ],
