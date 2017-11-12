@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-clear
+echo ""
+echo ""
 if [ -z "$1" ];then
 	echo "Pass in ami-id"
 else
