@@ -5,7 +5,7 @@
     "name": "ubuntu-xenial",
     "type": "amazon-ebs",
     "region": "ca-central-1",
-    "source_ami": "ami-e59c2581",
+    "source_ami": "ami-dfc47ebb",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "oss-ami {{timestamp | clean_ami_name}}",
@@ -23,9 +23,21 @@
      "type": "shell",
      "execute_command": "{{.Vars}} sudo -E -S bash '{{.Path}}'",
      "scripts": [
-	"scripts/initialize.sh"
- 	]
+	      "scripts/initialize.sh"
+ 	      ]
+   },
+
+   {
+     "type": "ansible-local",
+     "inventory_file": "inventory",
+     "playbook_dir": "../config-managment",
+     "playbook_file": "../config-managment/users.yml",
+     "role_paths": [
+        "../config-managment/roles/"
+     ],
+     "extra_arguments": ["-vvv"]
    }
+
    ]
 
 }
